@@ -1,0 +1,36 @@
+#N canvas 958 356 450 300 10;
+#X obj 168 120 snapshot~ 10;
+#X obj 157 74 abs~;
+#X obj 168 152 clip 0 1;
+#X obj 23 60 metro 10;
+#X obj 23 32 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X msg 330 202 disconnect;
+#X msg 291 167 connect 127.0.0.1 1234;
+#X obj 168 179 list prepend /afol;
+#X obj 168 204 list trim;
+#X obj 22 7 loadbang;
+#X obj 182 223 packOSC;
+#X obj 246 253 udpsend;
+#X obj 157 7 adc~ 1;
+#X msg 243 27 1 10;
+#X obj 246 57 line~;
+#X obj 158 36 amp~;
+#X obj 182 267 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 9 0 4 0;
+#X connect 10 0 11 0;
+#X connect 11 0 16 0;
+#X connect 12 0 15 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 1;
+#X connect 15 0 1 0;
